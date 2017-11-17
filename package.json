@@ -4,11 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "serve": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "api": "json-server --watch api/db.json --port 9001",
+    "start": "concurrently --kill-others \"npm run api\" \"npm run serve\""
   },
   "private": true,
   "dependencies": {
@@ -20,15 +22,21 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/effects": "^4.0.2",
+    "@ngrx/store": "^4.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "bootstrap": "^4.0.0-beta"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0",
+    "@angular/cli": "1.2.0",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
+    "json-server": "^0.9.5",
+    "concurrently": "^3.3.0",
     "codelyzer": "~2.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
