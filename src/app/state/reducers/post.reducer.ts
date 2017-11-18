@@ -10,13 +10,13 @@ export interface State {
     comments: Comment[];
 }
 
-const initialState: State {
+const initialState: State = {
     list: [],
     detail: undefined,
     comments: []
 };
 
-export function reducer(state = initialState, action: UserActions.Actions): State {
+export function reducer(state = initialState, action: PostActions.Actions): State {
     switch (action.type) {
         case PostActions.POST_LIST_SUCCESS: {
             return {

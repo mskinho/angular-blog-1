@@ -47,6 +47,6 @@ export type Actions =
     PostLoadList |
     PostDetailSuccess |
     PostLoadDetail |
-    CommentListLoaded |
+    CommentListSuccess |
     CommentLoadList |
     CommentAdd;

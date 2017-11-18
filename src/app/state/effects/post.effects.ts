@@ -26,7 +26,7 @@ export class PostEffects {
 	private url = Globals.url;
 
     @Effect() loadposts$: Observable<Action> = this.action$.ofType<PostActions.PostLoadList>(PostActions.POST_LOAD_LIST)
-        .map(() => this.http.get(this.url + '/posts')
+        .mergeMap(() => this.http.get(this.url + '/posts')
             .map(res => {
                 return new PostActions.PostListSuccess(res.json());
             })
