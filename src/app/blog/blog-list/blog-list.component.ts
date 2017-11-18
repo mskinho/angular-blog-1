@@ -10,7 +10,6 @@ import * as fromRoot from '../../state/reducers';
 @Component({
     selector: 'app-blog-list',
     templateUrl: './blog-list.component.html',
-    pipes: [DatePipe]
 })
 export class BlogListComponent implements OnInit {
 

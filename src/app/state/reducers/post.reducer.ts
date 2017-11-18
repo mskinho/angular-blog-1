@@ -27,7 +27,7 @@ export function reducer(state = initialState, action: PostActions.Actions): Stat
         }
         case PostActions.POST_CLEAR_DETAIL: {
             return {
-                list: action.payload,
+                list: state.list,
                 detail: undefined,
                 comments: [],
             };

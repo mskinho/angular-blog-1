@@ -1,3 +1,17 @@
-<p>
-  blog-detail works!
-</p>
+<div *ngIf="post">
+    <h1>
+        {{post.title}}
+    </h1>
+    <h4 class="text-muted">
+        {{post.author}}&nbsp;-&nbsp;{{post.publish_date|date:'dd/MMM/yyyy'}}
+    </h4>
+    <div [innerHtml]="post.content" class="mb-4"></div>
+    <hr>
+    <h4>Comments</h4>
+    <p *ngIf="comments.length == 0" class="text-muted">No comments added yet.</p>
+    <app-blog-comment-list [comments]="comments" *ngIf="comments.length > 0"></app-blog-comment-list>
+    <app-blog-comment-new></app-blog-comment-new>
+</div>
+<div *ngIf="!post">
+    Loading...
+</div>
