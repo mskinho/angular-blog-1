@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{comment.user}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{comment.date|date:'dd/MMM/yyyy'}}</h6>
+        <p class="card-text" [innerHtml]="comment.content"></p>
+        <button *ngIf="!reply" class="btn btn-outline-primary" (click)="reply = true">Reply</button>
+    </div>
+</div>
+<div class="card ml-3" *ngIf="reply">
+    <div class="card-body">
+        <button type="button" class="close float-right text-danger" (click)="reply = false">&times;</button>
+        <h4 class="card-title">Reply</h4>
+        <app-blog-comment-new [post]="post" [parent_id]="comment.id"></app-blog-comment-new>
+    </div>
+</div>
+<div class="ml-3">
+    <app-blog-comment-list [post]="post" [comments]="commentList" [post]="post" [parentId]="comment.id"></app-blog-comment-list>
+</div>

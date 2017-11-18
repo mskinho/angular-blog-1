@@ -18,7 +18,8 @@ import * as fromRoot from '../../state/reducers';
 })
 export class BlogCommentNewComponent implements OnInit {
 
-	@Input() post: Post;
+    @Input() post: Post;
+    @Input() parent_id: any = null;
 	public comment: BlogComment;
 	public commentForm: FormGroup;
 
@@ -34,7 +35,7 @@ export class BlogCommentNewComponent implements OnInit {
             user: "",
             content: "",
             postId: this.post.id,
-            parent_id: null,
+            parent_id: this.parent_id,
         };
         this.commentForm = this.formBuilder.group({
             'user': [this.comment.user, [Validators.required]],
@@ -49,6 +50,10 @@ export class BlogCommentNewComponent implements OnInit {
             newComment[k] = f.value[k];
         };
         this.store.dispatch(new PostActions.CommentAdd(newComment));
+        this.commentForm.reset({
+            'user': "",
+            'content': "",
+        });
     }
 
 }

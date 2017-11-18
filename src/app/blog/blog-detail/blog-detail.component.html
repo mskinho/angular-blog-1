@@ -8,9 +8,14 @@
     <div [innerHtml]="post.content" class="mb-4"></div>
     <hr>
     <h4>Comments</h4>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h4 class="card-title">New comment</h4>
+            <app-blog-comment-new [post]="post"></app-blog-comment-new>
+        </div>
+    </div>
     <p *ngIf="comments.length == 0" class="text-muted">No comments added yet.</p>
-    <app-blog-comment-list [comments]="comments" *ngIf="comments.length > 0"></app-blog-comment-list>
-    <app-blog-comment-new [post]="post"></app-blog-comment-new>
+    <app-blog-comment-list [comments]="comments" [post]="post" *ngIf="comments.length > 0"></app-blog-comment-list>
 </div>
 <div *ngIf="!post">
     Loading...

@@ -1,9 +1,3 @@
-<div class="mb-4">
-    <div *ngFor="let comment of comments | orderBy:'date':true" class="card mb-3">
-        <div class="card-body">
-            <h4 class="card-title">{{comment.user}}</h4>
-            <h6 class="card-subtitle mb-2 text-muted">{{comment.date|date:'dd/MMM/yyyy'}}</h6>
-            <p class="card-text" [innerHtml]="comment.content"></p>
-        </div>
-    </div>
+<div [ngClass]="{'mb-4': parentId == null}" *ngFor="let comment of comments | parentFilter:parentId | orderBy:'date':true">
+    <app-blog-comment-detail [post]="post" [commentList]="comments" [comment]="comment"></app-blog-comment-detail>
 </div>
