@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { PostEffects } from "./state/effects/post.effects";
     ],
     imports: [
         BrowserModule,
+        OrderModule,
         FormsModule,
         HttpModule,
         AppRoutingModule,

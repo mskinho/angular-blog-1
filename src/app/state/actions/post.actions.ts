@@ -4,6 +4,7 @@ export const POST_LIST_SUCCESS = 'POST_LIST_SUCCESS';
 export const POST_LOAD_LIST = 'POST_LOAD_LIST';
 export const POST_DETAIL_SUCCESS = 'POST_DETAIL_SUCCESS';
 export const POST_LOAD_DETAIL = 'POST_LOAD_DETAIL';
+export const POST_CLEAR_DETAIL = 'POST_CLEAR_DETAIL';
 export const COMMENT_LIST_SUCCESS = 'COMMENT_LIST_SUCCESS';
 export const COMMENT_LOAD_LIST = 'COMMENT_LOAD_LIST';
 export const COMMENT_ADD = 'COMMENT_ADD';
@@ -27,6 +28,10 @@ export class PostLoadDetail implements Action {
     constructor(public payload) {}
 }
 
+export class PostClearDetail implements Action {
+    readonly type = POST_CLEAR_DETAIL;
+}
+
 export class CommentListSuccess implements Action {
     readonly type = COMMENT_LIST_SUCCESS;
     constructor(public payload) {}
@@ -47,6 +52,7 @@ export type Actions =
     PostLoadList |
     PostDetailSuccess |
     PostLoadDetail |
+    PostClearDetail |
     CommentListSuccess |
     CommentLoadList |
     CommentAdd;

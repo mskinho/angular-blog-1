@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.component.html',
-  styleUrls: ['./blog-detail.component.scss']
 })
 export class BlogDetailComponent implements OnInit {
 
-  constructor() { }
+    constructor(
+        private activatedRoute: ActivatedRoute
+    ) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.activatedRoute.params.subscribe((params: Params) => {
+          console.log(params);
+        });
+    }
 
 }

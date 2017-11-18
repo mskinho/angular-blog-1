@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogListComponent } from './blog-list/blog-list.component';
@@ -8,10 +9,11 @@ import { BlogCommentListComponent } from './blog-comment-list/blog-comment-list.
 import { BlogCommentNewComponent } from './blog-comment-new/blog-comment-new.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BlogRoutingModule
-  ],
-  declarations: [BlogListComponent, BlogDetailComponent, BlogCommentListComponent, BlogCommentNewComponent]
+    imports: [
+        CommonModule,
+        BlogRoutingModule,
+        OrderModule
+    ],
+    declarations: [BlogListComponent, BlogDetailComponent, BlogCommentListComponent, BlogCommentNewComponent]
 })
 export class BlogModule { }

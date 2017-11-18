@@ -25,6 +25,13 @@ export function reducer(state = initialState, action: PostActions.Actions): Stat
                 comments: state.comments,
             };
         }
+        case PostActions.POST_CLEAR_DETAIL: {
+            return {
+                list: action.payload,
+                detail: undefined,
+                comments: [],
+            };
+        }
         case PostActions.POST_DETAIL_SUCCESS: {
             return {
                 list: state.list,
