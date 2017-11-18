@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { DatePipe } from '@angular/common';
 
 import { Post } from '../../models/post';
-import { Comment } from '../../models/comment';
+import { BlogComment } from '../../models/comment';
 
 import * as PostActions from '../../state/actions/post.actions';
 import * as fromRoot from '../../state/reducers';
@@ -16,7 +16,7 @@ import * as fromRoot from '../../state/reducers';
 export class BlogDetailComponent implements OnInit {
 
     public post: Post;
-    public comments: Comment[];
+    public comments: BlogComment[];
 
     constructor(
         private store: Store<fromRoot.State>,

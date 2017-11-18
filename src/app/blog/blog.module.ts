@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderModule } from 'ngx-order-pipe';
 
 import { BlogRoutingModule } from './blog-routing.module';
@@ -12,6 +13,8 @@ import { BlogCommentNewComponent } from './blog-comment-new/blog-comment-new.com
     imports: [
         CommonModule,
         BlogRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
         OrderModule
     ],
     declarations: [BlogListComponent, BlogDetailComponent, BlogCommentListComponent, BlogCommentNewComponent]

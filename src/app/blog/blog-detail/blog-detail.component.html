@@ -10,7 +10,7 @@
     <h4>Comments</h4>
     <p *ngIf="comments.length == 0" class="text-muted">No comments added yet.</p>
     <app-blog-comment-list [comments]="comments" *ngIf="comments.length > 0"></app-blog-comment-list>
-    <app-blog-comment-new></app-blog-comment-new>
+    <app-blog-comment-new [post]="post"></app-blog-comment-new>
 </div>
 <div *ngIf="!post">
     Loading...

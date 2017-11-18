@@ -1,3 +1,18 @@
-<p>
-  blog-comment-new works!
-</p>
+<hr>
+<h5>Add comment</h5>
+<form [formGroup]="commentForm" novalidate (submit)="save(commentForm)">
+    <div class="form-group">
+        <label class="form-control-label">Name</label>
+        <input type="text" name="user" 
+          formControlName="user" class="form-control" 
+          [ngClass]="(commentForm.get('user').invalid && commentForm.get('user').touched) ? 'is-invalid' : ''">
+    </div>
+    <div class="form-group">
+        <label class="form-control-label">Comment</label>
+        <textarea rows="3" name="content" 
+          formControlName="content" class="form-control" 
+          [ngClass]="(commentForm.get('content').invalid && commentForm.get('content').touched) ? 'is-invalid' : ''">
+        </textarea>
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!commentForm.valid">Add comment</button>
+</form>

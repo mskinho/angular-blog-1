@@ -51,4 +51,14 @@ export class PostEffects {
             .catch(err => of(new ErrorActions.ServerFailure(err)))
         );
 
+    @Effect() addpostcomment$: Observable<Action> = this.action$.ofType<PostActions.CommentAdd>(PostActions.COMMENT_ADD)
+        .map(action => action.payload)
+        .mergeMap(payload => this.http.post(this.url + '/posts/' + payload.postId + '/comments', payload)
+            .map(res => {
+                let data = res.json();
+                return new PostActions.CommentLoadList(data.postId);
+            })
+            .catch(err => of(new ErrorActions.ServerFailure(err)))
+        );
+
 }

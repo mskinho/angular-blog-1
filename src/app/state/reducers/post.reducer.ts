@@ -1,13 +1,13 @@
 import { Action } from '@ngrx/store';
 
-import { Comment } from "../../models/comment";
+import { BlogComment } from "../../models/comment";
 import { Post } from "../../models/post";
 import * as PostActions from "../actions/post.actions";
 
 export interface State {
     list: Post[];
     detail: Post;
-    comments: Comment[];
+    comments: BlogComment[];
 }
 
 const initialState: State = {

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Comment } from '../../models/comment';
+import { BlogComment } from '../../models/comment';
 
 @Component({
   selector: 'app-blog-comment-list',
@@ -8,7 +8,7 @@ import { Comment } from '../../models/comment';
 })
 export class BlogCommentListComponent implements OnInit {
 
-    @Input() comments: Comment[];
+    @Input() comments: BlogComment[];
 
   constructor() { }
 
