@@ -1,6 +1,6 @@
 export interface Post {
     id: number;
-    titlen: string;
+    title: string;
     author: string;
     publish_date: string; // Date that post was published in YYYY-MM-DD format
     slug: string;         // Readable URL to use for individual posts

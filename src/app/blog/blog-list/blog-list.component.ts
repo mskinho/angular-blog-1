@@ -13,7 +13,7 @@ import * as fromRoot from '../../state/reducers';
 })
 export class BlogListComponent implements OnInit {
 
-    private posts: Post[];
+    public posts: Post[];
 
     constructor(
         private store: Store<fromRoot.State>,
