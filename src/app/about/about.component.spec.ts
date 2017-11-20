@@ -22,4 +22,11 @@ describe('AboutComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render page title in a h2 tag', async(() => {
+    const fixture = TestBed.createComponent(AboutComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain('About us');
+  }));
 });
