@@ -43,7 +43,7 @@ export class BlogCommentNewComponent implements OnInit {
         });
     }
 
-    public save(f: NgForm) {
+    public save(f: FormGroup) {
         if (!f.valid) { return false; }
         var newComment = {...this.comment}
         for (var k in f.value){
